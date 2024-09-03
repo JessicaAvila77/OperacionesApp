@@ -4,10 +4,19 @@
              x:Class="OperacionesApp.MainPage">
 
     <ContentPage Title="Area del cuadrado">
-        <StackLayout>
-            
-            
-            
+        <StackLayout Padding="30,30" Spacing="10">
+            <Label Text="Ingrese el valor de uno de los lados del cuadrado:" />
+            <Entry x:Name="ladoCuadrado" Keyboard="Numeric" />
+
+            <Label Text="Resultado del area del cuadrado:" />
+            <Entry x:Name="respCuadrado" Keyboard="Numeric" IsReadOnly="True" />
+
+
+
+            <Button Text="Calcular" x:Name="txtCalcularCuadrado" Clicked="txtCalcularCuadrado_Clicked" />
+            <Button Text="Limpiar" x:Name="txtLimpiarCuadrado" BackgroundColor="Green" Clicked="txtLimpiarCuadrado_Clicked" />
+
+
         </StackLayout>
     </ContentPage>
 
