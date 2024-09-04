@@ -32,15 +32,21 @@
             <Button Text="Calcular" x:Name="txtCalcularCirculo" Clicked="txtCalcularCirculo_Clicked" />
             <Button Text="Limpiar" x:Name="txtLimpiarCirculo" BackgroundColor="Green" Clicked="txtLimpiarCirculo_Clicked" />
 
-
-
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="Area del rectangulo">
-        <StackLayout>
+        <StackLayout Padding="30,30" Spacing="10">
+            <Label Text="Ingrese el largo del rectángulo:" />
+            <Entry x:Name="largo" Keyboard="Numeric" />
+            <Label Text="Ingrese el ancho del rectángulo:" />
+            <Entry x:Name="ancho" Keyboard="Numeric" />
 
+            <Label Text="Resultado del area del rectángulo:" />
+            <Entry x:Name="respRectangulo" Keyboard="Numeric" IsReadOnly="True" />
 
+            <Button Text="Calcular" x:Name="txtCalcularRectangulo" Clicked="txtCalcularRectangulo_Clicked" />
+            <Button Text="Limpiar" x:Name="txtLimpiarRectangulo" BackgroundColor="Green" Clicked="txtLimpiarRectangulo_Clicked" />
 
         </StackLayout>
     </ContentPage>

@@ -51,7 +51,7 @@
 
             ladoCuadrado.Text = "";
             respCuadrado.Text = "";
-
+            ladoCuadrado.Focus();
         }
 
 
@@ -96,6 +96,7 @@
         {
             radioCirculo.Text = "";
             respCirculo.Text = "";
+            radioCirculo.Focus();
 
         }
 
@@ -103,10 +104,79 @@
 
         //Area del rectangulo
 
+        private void txtCalcularRectangulo_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                double largoR, anchoR, areaRectangulo;
+
+                if (Validar())
+                {
+                    
+                    largoR = double.Parse(largo.Text);
+                    anchoR = double.Parse(ancho.Text);
+
+                    if (largoR <= 0)
+                    {
+                        DisplayAlert("ADVERTENCIA", "el valor del largo no puede ser negativo o igual a cero", "Aceptar");
+                    }
+                    else if (anchoR <= 0) 
+                    {
+                        DisplayAlert("ADVERTENCIA", "el valor del ancho no puede ser negativo o igual a cero", "Aceptar");
+
+                    }
+                    else
+                    {
+                        areaRectangulo = anchoR * largoR;
+
+                        respRectangulo.Text = areaRectangulo.ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("ERROR", ex.Message, "Aceptar");
+            }
+
+        }
+
+        private void txtLimpiarRectangulo_Clicked(object sender, EventArgs e)
+        {
+            largo.Text = "";
+            ancho.Text = "";
+            respRectangulo.Text = "";
+            largo.Focus();
+
+        }
+
+        private bool Validar()
+        {
+            bool esValido = true;
+
+            if (largo.Text == "" || largo.Text is null)
+            {
+                Warning("Ingrese el valor del largo");
+                esValido = false;
+                largo.Focus ();
+            }
+            else if (ancho.Text == "" || ancho.Text is null)
+            {
+                Warning("Ingrese el valor del ancho");
+                esValido = false;
+                ancho.Focus();
+            }
+
+            return esValido;
 
 
+        }
 
-
+        private void Warning(string mensaje)
+        {
+            DisplayAlert("ADVERTENCIA", mensaje, "Aceptar");
+        }
 
 
     }
