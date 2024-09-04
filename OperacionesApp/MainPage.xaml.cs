@@ -54,16 +54,59 @@
 
         }
 
+
         //Area del circulo
 
+        private void txtCalcularCirculo_Clicked(object sender, EventArgs e)
+        {
 
 
+            try
+            {
+                double radio, areaCirculo;
 
+                if (radioCirculo.Text is null || radioCirculo.Text == "")
+                {
+                    DisplayAlert("ADVERTENCIA", "Ingrese el radio del circulo", "Aceptar");
+                }
+                else
+                {
+                    radio = double.Parse(radioCirculo.Text);
 
+                    if (radio <= 0)
+                    {
+                        DisplayAlert("ADVERTENCIA", "El valor del radio no puede ser negativo o igual a cero", "Aceptar");
+                    }
+                    else
+                    {
+                        areaCirculo = 3.14159 * (Math.Pow(radio, 2));
+
+                        respCirculo.Text = areaCirculo.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("ERROR", ex.Message, "Aceptar");
+            }  
+           
+        }
+
+        private void txtLimpiarCirculo_Clicked(object sender, EventArgs e)
+        {
+            radioCirculo.Text = "";
+            respCirculo.Text = "";
+
+        }
 
 
 
         //Area del rectangulo
+
+
+
+
+
 
 
     }
