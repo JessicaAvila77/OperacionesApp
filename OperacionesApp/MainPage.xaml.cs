@@ -9,6 +9,7 @@
             InitializeComponent();
         }
 
+        //Area del cuadrado
         private void txtCalcularCuadrado_Clicked(object sender, EventArgs e)
         {
             try
@@ -52,6 +53,17 @@
             respCuadrado.Text = "";
 
         }
+
+        //Area del circulo
+
+
+
+
+
+
+
+
+        //Area del rectangulo
 
 
     }
