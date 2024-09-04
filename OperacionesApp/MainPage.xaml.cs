@@ -20,6 +20,7 @@
                 if (ladoCuadrado.Text is null || ladoCuadrado.Text == "")
                 {
                     DisplayAlert("ADVERTENCIA", "Ingrese el valor del lado", "Aceptar");
+                    ladoCuadrado.Focus();
                 }
                 else
                 {
@@ -68,6 +69,7 @@
                 if (radioCirculo.Text is null || radioCirculo.Text == "")
                 {
                     DisplayAlert("ADVERTENCIA", "Ingrese el radio del circulo", "Aceptar");
+                    radioCirculo.Focus();
                 }
                 else
                 {
